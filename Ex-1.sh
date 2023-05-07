@@ -5,7 +5,7 @@ if [[ "$#" -ne 2 ]]; then
 	exit 1
 fi
 
-if ! [[ "$1" =~ ^[0-9]+$  ]] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
+if echo "$1$2" | grep -q "^[0-9]+$"; then
 	echo "Both arguments must be whole numbers"
 	exit 1
 fi
